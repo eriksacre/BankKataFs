@@ -53,5 +53,16 @@ module StatementPrinter =
         |> statements 
         |> List.map printLine
         |> ignore
-        
-        ()
+
+module Repository =
+    let GetRepo () =
+        let mutable transactions = []
+    
+        let add transaction =
+            transactions <- [transaction] |> List.append transactions
+            
+            
+        let getTransactions () =
+            transactions
+            
+        (add, getTransactions)

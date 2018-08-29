@@ -5,8 +5,6 @@ open FsUnit
 open BankKataFs.Domain
 
 module StatementPrinterTests =
-    open BankKataFs.Tests
-
     let [<Test>] ``Prints the header if there are no transactions`` () =
         let (printLine, printed) = Console.Capture ()
         let print = StatementPrinter.Print printLine

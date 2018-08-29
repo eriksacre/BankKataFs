@@ -9,6 +9,7 @@
         <Compile Include="Fake.fs" />
         <Compile Include="FeatureTests.fs" />
         <Compile Include="AccountTests.fs" />
+        <Compile Include="RepositoryTests.fs" />
         <Compile Include="StatementPrinterTests.fs" />
     </ItemGroup>
 
