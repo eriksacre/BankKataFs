@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BankKataFs.Tests", "BankKataFs.Tests\BankKataFs.Tests.fsproj", "{ED86C1C3-FC4D-4CC1-AFA9-626DA7E2EA5B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BankKataFs.Domain", "BankKataFs.Domain\BankKataFs.Domain.fsproj", "{3DA01E17-9B9F-464C-B588-AED32EE21F09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED86C1C3-FC4D-4CC1-AFA9-626DA7E2EA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED86C1C3-FC4D-4CC1-AFA9-626DA7E2EA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED86C1C3-FC4D-4CC1-AFA9-626DA7E2EA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED86C1C3-FC4D-4CC1-AFA9-626DA7E2EA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA01E17-9B9F-464C-B588-AED32EE21F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA01E17-9B9F-464C-B588-AED32EE21F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA01E17-9B9F-464C-B588-AED32EE21F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA01E17-9B9F-464C-B588-AED32EE21F09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
