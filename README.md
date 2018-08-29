@@ -33,8 +33,8 @@ Start with a module with following function signatures:
 
 ```
 module AccountService =
-    Credit: Amount -> unit
-    Debit: Amount -> unit
+    Deposit: Amount -> unit
+    Withdraw: Amount -> unit
     PrintStatement: unit -> unit
 ```
 

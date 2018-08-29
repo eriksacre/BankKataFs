@@ -8,15 +8,15 @@ module Features =
     let (capturePrintLine, capturedOutput) = Console.capture ()
         
     module AccountService =
-        let Credit = Account.Credit
-        let Debit = Account.Debit
+        let Deposit = Account.Deposit
+        let Withdraw = Account.Withdraw
         let PrintStatement () = Account.PrintStatement capturePrintLine
     
     let [<Test>] ``PrintStatement must contain all transactions in reverse chronological order`` () =
 
-        AccountService.Credit 1000
-        AccountService.Debit 100
-        AccountService.Credit 500        
+        AccountService.Deposit 1000
+        AccountService.Withdraw 100
+        AccountService.Deposit 500        
         AccountService.PrintStatement()
         
         capturedOutput () |> should equal [
