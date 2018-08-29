@@ -9,13 +9,18 @@ type Add = (Date * Amount) -> unit
     
 type GetToday = unit -> Date
 
+type StoreTransaction = Amount -> unit
+
 module Account =
-    let Deposit (getToday: GetToday) (add: Add) (amount: Amount) =
-        add (getToday (), amount)
+    let Deposit (storeTransaction: StoreTransaction) (amount: Amount) =
+        storeTransaction amount
         
-    let Withdraw (getToday: GetToday) (add: Add) (amount: Amount) =
-        add (getToday (), -amount)
+    let Withdraw (storeTransaction: StoreTransaction) (amount: Amount) =
+        storeTransaction -amount
         
     let PrintStatement (printLine: PrintLine) =
         ()
         
+module Transaction =
+    let StoreTransaction (getToday: GetToday) (add: Add) (amount: Amount) =
+        add (getToday (), amount)
