@@ -15,14 +15,16 @@ let ReturnValues (listOfValues) =
         
     nextValue
     
-let Set initValue =
-    let mutable savedValue = initValue
+let Set () =
+    let mutable savedValue = None
     
     let setValue value =
-        savedValue <- value
+        savedValue <- Some value
     
     let getValue () =
-        savedValue
+        match savedValue with
+        | Some v -> v
+        | None -> failwith "No value was set"
         
     (setValue, getValue)
 
@@ -37,6 +39,10 @@ let [<Test>] ``ReturnValues throws exception when there are no data values left 
     (fun () -> rv () |> ignore) |> should (throwWithMessage "No more data") typeof<System.Exception>
     
 let [<Test>] ``Set:setValue sets a value to be returned by Set:getValue`` () =
-    let (setValue, getValue) = Set 0
+    let (setValue, getValue) = Set ()
     setValue 1
     getValue () |> should equal 1
+
+let [<Test>] ``getValue without prior setValue results in exception`` () =
+    let (_, getValue) = Set ()
+    (fun () -> getValue () |> ignore) |> should (throwWithMessage "No value was set") typeof<System.Exception>
