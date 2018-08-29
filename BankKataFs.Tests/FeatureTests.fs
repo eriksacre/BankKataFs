@@ -6,12 +6,10 @@ open BankKataFs.Domain
 
 module Features =
     let (capturePrintLine, capturedOutput) = Console.Capture ()
-    
-    let repoAdd _ = ()
-    let today () = ""
-    let storeTransaction = Transaction.StoreTransaction today repoAdd
-    let getTransactions () = []
-    let print _ = ()
+    let (add, getTransactions) = Repository.GetRepo ()
+    let today = Fake.ReturnValues ["01/04/2014"; "02/04/2014"; "10/04/2014"]
+    let storeTransaction = Transaction.StoreTransaction today add
+    let print = StatementPrinter.Print capturePrintLine
         
     module AccountService =
         let Deposit = Account.Deposit storeTransaction
