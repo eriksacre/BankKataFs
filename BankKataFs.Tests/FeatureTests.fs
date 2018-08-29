@@ -5,10 +5,13 @@ open FsUnit
 open BankKataFs.Domain
 
 module Features =
-    let (capturePrintLine, capturedOutput) = Console.capture ()
+    let (capturePrintLine, capturedOutput) = Console.Capture ()
+    
+    let repoAdd _ = ()
+    let today () = ""
         
     module AccountService =
-        let Deposit = Account.Deposit
+        let Deposit = Account.Deposit today repoAdd
         let Withdraw = Account.Withdraw
         let PrintStatement () = Account.PrintStatement capturePrintLine
     

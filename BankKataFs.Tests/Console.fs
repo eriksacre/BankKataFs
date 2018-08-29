@@ -3,7 +3,7 @@ module BankKataFs.Tests.Console
 open NUnit.Framework
 open FsUnit
 
-let capture () =
+let Capture () =
     let mutable output: string list = []
     
     let capturePrintLine message =
@@ -15,7 +15,7 @@ let capture () =
     (capturePrintLine, capturedOutput)
 
 let [<Test>] ``capturedOutput should return list of captured strings`` () =
-    let (capturePrintLine, capturedOutput) = capture ()
+    let (capturePrintLine, capturedOutput) = Capture ()
     capturePrintLine "Line 1"
     capturePrintLine "Line 2"
     

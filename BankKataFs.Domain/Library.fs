@@ -5,10 +5,16 @@ type Amount = int
 
 module Console =
     type PrintLine = string -> unit
+    
+module Repository =
+    type Add = (Date * Amount) -> unit
+    
+module Clock =
+    type GetToday = unit -> Date
 
 module Account =
-    let Deposit (amount: Amount) =
-        ()
+    let Deposit (getToday: Clock.GetToday) (add: Repository.Add) (amount: Amount) =
+        add (getToday (), amount)
         
     let Withdraw (amount: Amount) =
         ()
