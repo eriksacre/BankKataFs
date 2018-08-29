@@ -16,8 +16,8 @@ module Account =
     let Deposit (getToday: Clock.GetToday) (add: Repository.Add) (amount: Amount) =
         add (getToday (), amount)
         
-    let Withdraw (amount: Amount) =
-        ()
+    let Withdraw (getToday: Clock.GetToday) (add: Repository.Add) (amount: Amount) =
+        add (getToday (), -amount)
         
     let PrintStatement (printLine: Console.PrintLine) =
         ()

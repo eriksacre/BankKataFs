@@ -12,7 +12,7 @@ module Features =
         
     module AccountService =
         let Deposit = Account.Deposit today repoAdd
-        let Withdraw = Account.Withdraw
+        let Withdraw = Account.Withdraw today repoAdd
         let PrintStatement () = Account.PrintStatement capturePrintLine
     
     let [<Test>] ``PrintStatement must contain all transactions in reverse chronological order`` () =
