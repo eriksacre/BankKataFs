@@ -25,8 +25,11 @@ module AccountTests =
         
         added () |> should equal ("01/02/2018", -100)
 
-(*    let [<Test>] ``PrintStatement prints all transactions`` () =
-        let (print, printed) = Fake.Set 
-        printStatement()
+    let [<Test>] ``PrintStatement prints all transactions`` () =
+        let (print, printed) = Fake.Set ()
+        let getTransactions = fun () -> []
+        let printStatement () = Account.PrintStatement getTransactions print
         
-        printed () |> should equal []*)
+        printStatement ()
+        
+        printed () |> should equal []

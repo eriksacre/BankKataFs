@@ -10,11 +10,13 @@ module Features =
     let repoAdd _ = ()
     let today () = ""
     let storeTransaction = Transaction.StoreTransaction today repoAdd
+    let getTransactions () = []
+    let print _ = ()
         
     module AccountService =
         let Deposit = Account.Deposit storeTransaction
         let Withdraw = Account.Withdraw storeTransaction
-        let PrintStatement () = Account.PrintStatement capturePrintLine
+        let PrintStatement () = Account.PrintStatement getTransactions print
     
     let [<Test>] ``PrintStatement must contain all transactions in reverse chronological order`` () =
 
