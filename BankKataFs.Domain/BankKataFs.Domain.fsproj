@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Clock.fs" />
         <Compile Include="Types.fs" />
         <Compile Include="Account.fs" />
         <Compile Include="Repository.fs" />

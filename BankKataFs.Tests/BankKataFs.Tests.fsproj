@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="ClockTest.fs" />
         <Compile Include="Console.fs" />
         <Compile Include="Fake.fs" />
         <Compile Include="FeatureTests.fs" />
