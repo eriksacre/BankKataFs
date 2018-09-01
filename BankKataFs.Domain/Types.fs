@@ -8,8 +8,8 @@ module Amount =
         if amount <= 0 then failwith "Amount must be positive"
         amount
         
-    let Negate value =
-        -value
+    let Negate amount =
+        -amount
 
 type PrintLine = string -> unit
     
