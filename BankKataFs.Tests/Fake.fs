@@ -36,7 +36,8 @@ let [<Test>] ``ReturnValues returns the configured values one by one`` () =
 let [<Test>] ``ReturnValues throws exception when there are no data values left to return`` () =
     let rv = ReturnValues [1]
     rv () |> should equal 1
-    (fun () -> rv () |> ignore) |> should (throwWithMessage "No more data") typeof<System.Exception>
+    (fun () -> rv () |> ignore)
+    |> should (throwWithMessage "No more data") typeof<System.Exception>
     
 let [<Test>] ``Set:setValue sets a value to be returned by Set:getValue`` () =
     let (setValue, getValue) = Set ()
@@ -45,4 +46,5 @@ let [<Test>] ``Set:setValue sets a value to be returned by Set:getValue`` () =
 
 let [<Test>] ``getValue without prior setValue results in exception`` () =
     let (_, getValue) = Set ()
-    (fun () -> getValue () |> ignore) |> should (throwWithMessage "No value was set") typeof<System.Exception>
+    (fun () -> getValue () |> ignore)
+    |> should (throwWithMessage "No value was set") typeof<System.Exception>

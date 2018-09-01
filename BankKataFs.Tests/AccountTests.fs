@@ -22,12 +22,14 @@ module AccountDepositTests =
     let [<Test>] ``Depositing a negative number throws an exception`` () =
         let (deposit, _) = setupDeposit ()
 
-        (fun () -> deposit -1) |> should throw typeof<System.Exception>
+        (fun () -> deposit -1)
+        |> should throw typeof<System.Exception>
            
     let [<Test>] ``Depositing zero throws an exception`` () =
         let (deposit, _) = setupDeposit ()
 
-        (fun () -> deposit 0) |> should throw typeof<System.Exception>
+        (fun () -> deposit 0)
+        |> should throw typeof<System.Exception>
 
 module AccountWithdrawTests =
     let setupWithdraw () =           
@@ -47,12 +49,14 @@ module AccountWithdrawTests =
     let [<Test>] ``Withdrawing a negative amount should throw an exception`` () =
         let (withdraw, added) = setupWithdraw ()
         
-        (fun () -> withdraw -1) |> should throw typeof<System.Exception>    
+        (fun () -> withdraw -1)
+        |> should throw typeof<System.Exception>    
 
     let [<Test>] ``Withdrawing zero should throw an exception`` () =
         let (withdraw, added) = setupWithdraw ()
         
-        (fun () -> withdraw 0) |> should throw typeof<System.Exception>    
+        (fun () -> withdraw 0)
+        |> should throw typeof<System.Exception>    
 
 module AccountPrintStatementTests =
     let [<Test>] ``PrintStatement prints all transactions`` () =
