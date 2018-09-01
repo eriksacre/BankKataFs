@@ -13,5 +13,6 @@ module Account =
         |> storeTransaction
         
     let PrintStatement (getTransactions: GetTransactions) (print: Print) =
-        getTransactions () |> print
+        getTransactions ()
+        |> print
         
